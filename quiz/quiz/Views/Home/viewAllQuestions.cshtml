@@ -1,0 +1,78 @@
+﻿@model IEnumerable<quiz.Models.TBL_QUESTIONS>
+
+@{
+    ViewBag.Title = "viewAllQuestions";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2 style="text-align:center; background-color:brown;color:white">Questions</h2><br />
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Q_TEXT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OPD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COP)
+        </th>
+        <th></th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Q_TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OPD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COP)
+        </td>
+        <td>
+            <a href="~/Home/Remove1/@item.QUESTION_ID">Remove</a>
+        </td>
+
+    </tr>
+}
+
+</table>
+<script>
+    function remove(id) {
+        alert(id);
+        $.post("@Url.Action("Remove1","Home")",
+        {
+            id: id
+        },
+            function (data) {
+                alert("asdajdhkja");
+                if (data == 0) {
+                    alert("Updated Successfully");
+                    window.location.reload;
+                }
+            });
+
+    }
+</script>

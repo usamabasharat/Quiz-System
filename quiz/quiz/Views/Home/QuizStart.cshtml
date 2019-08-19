@@ -1,0 +1,99 @@
+﻿@model quiz.Models.TBL_QUESTIONS
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>QuizStart</title>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-md-10 col-xs-10 col-sm-10">
+
+                    <br /><br /><br />
+                    <table class="table">
+                        
+                        <tbody>
+
+                            <tr class="table-active">
+                                <th style="font-size:20px;">@Html.DisplayFor(x => x.Q_TEXT)</th>
+                            </tr>
+                            <tr class="table-active">
+                                <td> A) @Html.RadioButtonFor(x => x.OPA, @Model.QUESTION_ID) @Model.OPA</td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>B) @Html.RadioButtonFor(x => x.OPB, @Model.QUESTION_ID) @Model.OPB</td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>C) @Html.RadioButtonFor(x => x.OPC, @Model.QUESTION_ID) @Model.OPC</td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>D) @Html.RadioButtonFor(x => x.OPD, @Model.QUESTION_ID) @Model.OPD</td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+
+
+                            @*<div class="row">
+                                <h1 style="font-family: Arial, Helvetica, sans-serif">@Html.DisplayFor(x => x.Q_TEXT)</h1>
+                            </div>
+                            <br />
+
+
+                            <div class="row">
+                                <h5>@Html.RadioButtonFor(x => x.OPA, @Model.QUESTION_ID) @Model.OPA</h5>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <h5>@Html.RadioButtonFor(x => x.OPB, @Model.QUESTION_ID) @Model.OPB</h5>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <h5>@Html.RadioButtonFor(x => x.OPC, @Model.QUESTION_ID) @Model.OPC</h5>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <h5>@Html.RadioButtonFor(x => x.OPD, @Model.QUESTION_ID) @Model.OPD</h5>
+                            </div>*@
+                            <br />
+                            <div class="row" style="display:none">
+                                @Html.TextBoxFor(x => x.COP)
+                            </div>
+                </div>
+            </div>
+            <div class="row">
+                <input style="margin-top: -10px; margin-left:20px;" type="submit" value="Submit" class="btn btn-success" />
+            </div>
+
+        </div>
+    }
+
+    <script>
+
+
+
+
+    </script>
+</body>
+
+</html>

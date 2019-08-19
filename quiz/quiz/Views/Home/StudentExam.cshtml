@@ -1,0 +1,41 @@
+﻿@model List<quiz.Models.TBL_STUDENT>
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Exam Room</title>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+   
+</head>
+<body>
+    @if (ViewBag.error != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Error!</strong> @ViewBag.error
+        </div>
+    }
+    @using (Html.BeginForm())
+    {
+
+        <div class="container" style="align-content:center">
+            <h3>Enter Room Number</h3>
+            <input type="text" placeholder="Room Number" id="room" name="room" class="form-control" />
+            <br />
+            <input type="submit" value="Submit" class="btn btn-info btn-block" />
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard</title>
+</head>
+<body>
+
+
+
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 btn-btn-success" style="height:900px; border: 1px solid gray; background-color:#272222">
+
+            <div class="list-group list-group-item-action active ">
+                <a class="list-group-item " href="@Url.Action("Addcategory")"> Add Category</a>
+                <a class="list-group-item " href="@Url.Action("Addquestion")"> Add Question</a>
+                <a class="list-group-item " href="@Url.Action("Logout")"> Logout</a>
+                
+
+            </div>
+
+
+
+            </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="height:900px; border: 1px solid gray">
+
+
+            @RenderBody()
+
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>

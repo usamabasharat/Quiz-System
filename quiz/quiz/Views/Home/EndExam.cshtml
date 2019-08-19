@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EndExam</title>
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    @{
+
+        int c = Convert.ToInt32(TempData["score"]);
+        int t = Convert.ToInt32(TempData["total"]);
+        int p = t / 2;
+
+    }
+
+    @if (c >= p)
+    {
+        <div class="card text-white bg-success mb-3" style="max-width: 1300px; padding:10px">
+            <div class="cardc-body">
+                <h4 class="card-title" style="text-align:center">Quiz Over!</h4>
+                <p class="card-text" style="text-align: center">You got @TempData["score"] / @TempData["total"] marks. Congratulations! You have passed the quiz.</p>
+
+            </div>
+        </div>
+    }
+    @if (c < p)
+    {
+        <div class="card text-white bg-danger mb-3" style="max-width: 1300px; padding:10px">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align:center">Quiz Over!</h4>
+                <p class="card-text" style="text-align: center">You got @TempData["score"] / @TempData["total"] marks. You are fail! Better Luck next time. </p>
+
+            </div>
+        </div>
+    }
+    
+</body>
+</html>
